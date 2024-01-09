@@ -24,16 +24,13 @@ class SettingsFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_settings, container, false)
 
-        // Initialize UI elements
         themeRadioGroup = view.findViewById(R.id.themeRadioGroup)
         lightThemeRadioButton = view.findViewById(R.id.lightThemeRadioButton)
         darkThemeRadioButton = view.findViewById(R.id.darkThemeRadioButton)
         notificationsSwitch = view.findViewById(R.id.notificationsSwitch)
 
-        // Set initial values (you may load saved preferences here)
         setInitialTheme()
 
-        // Set up listeners for theme selection and notifications
         setUpThemeListener()
         setUpNotificationsListener()
 
@@ -52,12 +49,10 @@ class SettingsFragment : Fragment() {
         themeRadioGroup.setOnCheckedChangeListener { _, checkedId ->
             when (checkedId) {
                 R.id.lightThemeRadioButton -> {
-                    // Set light theme
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
                     recreateActivity()
                 }
                 R.id.darkThemeRadioButton -> {
-                    // Set dark theme
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
                     recreateActivity()
                 }
@@ -71,11 +66,8 @@ class SettingsFragment : Fragment() {
 
     private fun setUpNotificationsListener() {
         notificationsSwitch.setOnCheckedChangeListener { _, isChecked ->
-            // Handle notifications toggle
             if (isChecked) {
-                // Notifications turned on
             } else {
-                // Notifications turned off
             }
         }
     }

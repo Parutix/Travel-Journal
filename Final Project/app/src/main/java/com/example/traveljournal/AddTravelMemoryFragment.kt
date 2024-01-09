@@ -1,6 +1,5 @@
 package com.example.traveljournal
 
-// AddTravelMemoryFragment.kt
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -48,7 +47,6 @@ class AddTravelMemoryFragment : Fragment() {
 
     }
 
-    // Interface to communicate with the hosting activity or fragment
     interface AddMemoryListener {
         fun onMemoryAdded(memory: TravelMemory)
     }
